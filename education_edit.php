@@ -14,16 +14,17 @@ if( !isset( $_GET['id'] ) )
   
 }
 
-if( isset( $_POST['institute_name'] ) )
+if( isset( $_POST['InstituteName'] ) )
 {
   
-  if( $_POST['institute_name'] )
+  if( $_POST['InstituteName'] )
   {
     
     $query = 'UPDATE education SET
-      institute_name = "'.mysqli_real_escape_string( $connect, $_POST['institute_name'] ).'",
-      program = "'.mysqli_real_escape_string( $connect, $_POST['program'] ).'",
-      date = "'.mysqli_real_escape_string( $connect, $_POST['date'] ).'"
+      InstituteName = "'.mysqli_real_escape_string( $connect, $_POST['InstituteName'] ).'",
+      Program = "'.mysqli_real_escape_string( $connect, $_POST['Program'] ).'",
+      StartDate = "'.mysqli_real_escape_string( $connect, $_POST['StartDate'] ).'",
+      EndDate = "'.mysqli_real_escape_string( $connect, $_POST['EndDate'] ).'"
       WHERE id = '.$_GET['id'].'
       LIMIT 1';
     mysqli_query( $connect, $query );
@@ -67,18 +68,23 @@ include( 'includes/header.php' );
 
 <form method="post">
   
-  <label for="title">Institute Name:</label>
-  <input type="text" name="institute_name" id="institute_name" value="<?php echo htmlentities( $record['institute_name'] ); ?>">
+  <label for="Name">Institute Name:</label>
+  <input type="text" name="InstituteName" id="InstituteName" value="<?php echo htmlentities( $record['InstituteName'] ); ?>">
     
   <br>
   
-  <label for="url">Program:</label>
-  <input type="text" name="program" id="program" value="<?php echo htmlentities( $record['program'] ); ?>">
+  <label for="Program">Program:</label>
+  <input type="text" name="Program" id="Program" value="<?php echo htmlentities( $record['Program'] ); ?>">
     
   <br>
   
-  <label for="date">Date:</label>
-  <input type="date" name="date" id="date" value="<?php echo htmlentities( $record['date'] ); ?>">
+  <label for="Startdate">Start Date:</label>
+  <input type="date" name="StartDate" id="StartDate" value="<?php echo htmlentities( $record['StartDate'] ); ?>">
+  
+  <br>
+  
+  <label for="EndDate">End Date:</label>
+  <input type="date" name="EndDate" id="EndDate" value="<?php echo htmlentities( $record['EndDate'] ); ?>">
   
   <br>
   
