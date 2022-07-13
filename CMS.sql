@@ -21,6 +21,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `epiz_31686300_CMS`
 --
+-- --------------------------------------------------------
+/* added by Kamran */
+--
+-- Table structure for table `education`
+--
+
+CREATE TABLE `education` (
+  `id` int(11) NOT NULL,
+  `institute_name` varchar(255) NOT NULL,
+  `program` varchar(255) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 -- --------------------------------------------------------
 
@@ -81,6 +95,12 @@ CREATE TABLE `workExperience` (
 --
 -- Indexes for dumped tables
 --
+/* added by Kamran */
+
+-- Indexes for table `education`
+--
+ALTER TABLE `education`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `skills`
