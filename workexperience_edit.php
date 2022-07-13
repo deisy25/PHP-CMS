@@ -23,7 +23,7 @@ if( isset( $_POST['CompanyName'] ) )
     $query = 'UPDATE work experience SET
       CompanyName = "'.mysqli_real_escape_string( $connect, $_POST['CompanyName'] ).'",
       Position = "'.mysqli_real_escape_string( $connect, $_POST['Position'] ).'",
-      Responsibility = "'.mysqli_real_escape_string( $connect, $_POST['Responsibility] ).'",
+      Responsibility = "'.mysqli_real_escape_string( $connect, $_POST['Responsibility'] ).'",
       StartDate = "'.mysqli_real_escape_string( $connect, $_POST['StartDate'] ).'",
       EndDate = "'.mysqli_real_escape_string( $connect, $_POST['EndDate'] ).'"
       WHERE id = '.$_GET['id'].'
