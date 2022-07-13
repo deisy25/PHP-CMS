@@ -25,7 +25,7 @@ if( isset( $_POST['InstituteName'] ) )
       )';
     mysqli_query( $connect, $query );
     
-    set_message( 'Education record has been added' );
+    set_message( 'Education has been added' );
     
   }
   
