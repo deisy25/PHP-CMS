@@ -6,20 +6,22 @@ include( 'includes/functions.php' );
 
 secure();
 
-if( isset( $_POST['institute_name'] ) )
+if( isset( $_POST['InstituteName'] ) )
 {
   
-  if( $_POST['institute_name'] )
+  if( $_POST['InstituteName'] )
   {
     
     $query = 'INSERT INTO education (
-        institute_name,
-        program,
-        date
+        InstituteName,
+        Program,
+        StartDate,
+        EndDate
       ) VALUES (
-         "'.mysqli_real_escape_string( $connect, $_POST['institute_name'] ).'",
-         "'.mysqli_real_escape_string( $connect, $_POST['program'] ).'",
-         "'.mysqli_real_escape_string( $connect, $_POST['date'] ).'"
+         "'.mysqli_real_escape_string( $connect, $_POST['InstituteName'] ).'",
+         "'.mysqli_real_escape_string( $connect, $_POST['Program'] ).'",
+         "'.mysqli_real_escape_string( $connect, $_POST['StartDate'] ).'",
+         "'.mysqli_real_escape_string( $connect, $_POST['EndDate'] ).'"
       )';
     mysqli_query( $connect, $query );
     
@@ -41,17 +43,22 @@ include( 'includes/header.php' );
 <form method="post">
   
   <label for="title">Institute Name:</label>
-  <input type="text" name="institute_name" id="institute_name">
+  <input type="text" name="InstituteName" id="InstituteName">
     
   <br>
   
   <label for="program">Program:</label>
-  <input type="text" name="program" id="program">
+  <input type="text" name="Program" id="Program">
   
   <br>
   
-  <label for="date">Date:</label>
-  <input type="date" name="date" id="date">
+  <label for="date">Start Date:</label>
+  <input type="date" name="StartDate" id="StartDate">
+  
+  <br>
+  
+  <label for="date">End Date:</label>
+  <input type="date" name="EndDate" id="EndDate">
   
   <br>
   
