@@ -1,6 +1,6 @@
 <?php
    include('includes/database.php');
-
+   include('includes/function.php');
    if(isset($_POST['email']))
    { 
       $query = 'SELECT *
